@@ -1,0 +1,178 @@
+.tmp/
+coverage/
+dist/
+node_modules/
+
+
+#########################
+######### Linux #########
+#########################
+
+*~
+
+######### temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+######### KDE directory preferences
+.directory
+
+######### Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+######### .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+#########################
+######## Windows ########
+#########################
+
+######### Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+######### Dump file
+*.stackdump
+
+######### Folder config file
+Desktop.ini
+
+######### Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+######### Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+######### Windows shortcuts
+*.lnk
+
+#########################
+######### macOS #########
+#########################
+
+######### General
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+######### Icon must end with two \r
+Icon
+
+
+######### Thumbnails
+._*
+
+######### Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+######### Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+#########################
+######## editors ########
+#########################
+
+######### Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+######### vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+*~
+tags
+
+######### TextMate
+*.tmproj
+*.tmproject
+tmtags
+
+######### SublimeText
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+sftp-config.json
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
+bh_unicode_properties.cache
+GitHub.sublime-settings
+
+######### JetBrains
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+cmake-build-debug/
+.idea/**/mongoSettings.xml
+*.iws
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+.idea/replstate.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+######### Eclipse
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.externalToolBuilders/
+*.launch
+*.pydevproject
+.cproject
+.factorypath
+.buildpath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+.cache-main
+.scala_dependencies
+.worksheet
