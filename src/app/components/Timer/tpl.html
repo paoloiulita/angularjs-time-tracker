@@ -1,14 +1,14 @@
 <div class="ui centered card">
 	<div class="content">
 		<div class="header">
-			title
+			{{$ctrl.timerObject.title}}
 		</div>
 		<div class="meta">
-			project
+			{{$ctrl.timerObject.project}}
 		</div>
 		<div class="center aligned description">
 			<h2>
-				elapsedString
+				{{$ctrl.timerObject.elapsed | renderElapsedString: $ctrl.timerObject.runningSince}}
 			</h2>
 		</div>
 		<div class="extra content">

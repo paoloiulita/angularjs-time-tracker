@@ -1,6 +1,15 @@
 <div class="ui three column centered grid">
-    <div class="column">
-        <editable-timer-list></editable-timer-list>
-        <toggleable-timer-form></toggleable-timer-form>
-    </div>
+	<div class="column">
+		<div class="ui segment" ng-if="$ctrl.isLoading">
+			<div class="ui active dimmer">
+				<div class="ui text loader">Loading</div>
+			</div>
+			<p></p>
+		</div>
+		<timer
+            ng-if="!$ctrl.isLoading"
+            ng-repeat="timer in $ctrl.timers"
+            timer-object="timer">
+        </timer>
+	</div>
 </div>

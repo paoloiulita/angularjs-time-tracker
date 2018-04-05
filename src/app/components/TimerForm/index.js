@@ -1,6 +1,6 @@
 export const TimerForm = {
-  template: require('./tpl.html'),
-  controller() {
-    //
-  }
+	template: require('./tpl.html'),
+	controller() {
+	//
+	}
 };
