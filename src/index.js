@@ -1,10 +1,12 @@
 import angular from 'angular';
 
-import {TimerDashboard} from './app/TimerDashboard';
 import 'angular-ui-router';
 import routesConfig from './routes';
 
 import './index.css';
+import './semantic-dist/semantic.css';
+
+import {TimerDashboard} from './app/TimerDashboard';
 
 export const app = 'app';
 
