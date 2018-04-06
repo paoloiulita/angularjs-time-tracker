@@ -12,51 +12,25 @@ export const TimerService = $http => {
 		return $http.post('/api/timers', {
 			body: angular.toJson(data),
 			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
+				
 			}
 		});
 	};
 
 	const updateTimer = data => {
-		return $http.put('/api/timers', {
-			body: angular.toJson(data),
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			}
-		});
+		return $http.put('/api/timers', data);
 	};
 
 	const deleteTimer = data => {
-		return $http.delete('/api/timers', {
-			body: angular.toJson(data),
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			}
-		});
+		return $http.delete('/api/timers', data);
 	};
 
 	const startTimer = data => {
-		return $http.post('/api/timers/start', {
-			body: angular.toJson(data),
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			}
-		});
+		return $http.post('/api/timers/start', data);
 	};
 
 	const stopTimer = data => {
-		return fetch('/api/timers/stop', {
-			method: 'post',
-			body: angular.toJson(data),
-			headers: {
-				Accept: 'application/json',
-				'Content-Type': 'application/json'
-			}
-		});
+		return $http.post('/api/timers/stop', data);
 	};
 
 	return {
