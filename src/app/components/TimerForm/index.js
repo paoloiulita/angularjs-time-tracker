@@ -4,7 +4,8 @@ export const TimerForm = {
 	template: require('./tpl.html'),
 	bindings: {
 		isEditing: '<',
-		dismiss: '<'
+		complete: '<',
+		cancel: '<'
 	},
 	controller(timerService) {
 		this.isLoading = false;
@@ -26,7 +27,7 @@ export const TimerForm = {
 			const promise = this.isEditing ? doEdit : doCreate;
 			promise().then(() => {
 				this.isLoading = false;
-				this.dismiss();
+				this.complete();
 			});
 		};
 	}

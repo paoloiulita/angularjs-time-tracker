@@ -10,6 +10,10 @@ export const ToggleableTimerForm = {
 
 		this.dismiss = () => {
 			this.showForm = false;
+		};
+
+		this.update = () => {
+			this.dismiss();
 			this.refresh();
 		};
 	}
