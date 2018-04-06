@@ -24,7 +24,7 @@ angular
 	.module(app, ['ui.router'])
 	.config(routesConfig)
 	.value('REMOTE_HOST', 'http://localhost:3033')
-	.factory('globalInterceptor', ['$q', 'REMOTE_HOST', function($q, REMOTE_HOST) {
+	.factory('globalInterceptor', ['REMOTE_HOST', function(REMOTE_HOST) {
 		return {
 			request: function(config) {
 				config.url = REMOTE_HOST + config.url;
