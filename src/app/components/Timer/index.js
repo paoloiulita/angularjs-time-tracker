@@ -39,5 +39,23 @@ export const Timer = {
 		this.$onDestroy = () => {
 			clear();
 		};
+
+		this.toggleTimer = () => {
+			if (this.isRunning) {
+				timerService.stopTimer({
+					id: this.timerObject.id,
+					stop: Date.now()
+				})
+					.then(this.isRunning = false);
+			} else {
+				timerService.startTimer({
+					id: this.timerObject.id,
+					start: Date.now()
+				})
+					.then(response => {
+						this.isRunning = true;
+					});
+			}
+		}
 	}
 };
