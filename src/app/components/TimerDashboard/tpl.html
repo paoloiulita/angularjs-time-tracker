@@ -1,10 +1,9 @@
 <div class="ui three column centered grid">
 	<div class="column">
-		<div class="ui segment" ng-if="$ctrl.isLoading">
+		<div class="ui segment" ng-if="$ctrl.isLoading"  style="height: 85px;">
 			<div class="ui active dimmer">
 				<div class="ui text loader">Loading</div>
 			</div>
-			<p></p>
 		</div>
 		<timer
             ng-if="!$ctrl.isLoading"
