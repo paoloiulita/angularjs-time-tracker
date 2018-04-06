@@ -1,8 +1,8 @@
 <div class="ui basic content center aligned segment">
 	
-	<timer-form></timer-form>
+	<timer-form ng-if="$ctrl.showForm" dismiss="$ctrl.dismiss" is-editing="false"></timer-form>
 	
-	<button class="ui basic button icon">
+	<button class="ui basic button icon" ng-if="!$ctrl.showForm" ng-click="$ctrl.showForm = true">
 		<i class="plus icon"></i>
 	</button>
 </div>
