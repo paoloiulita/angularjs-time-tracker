@@ -4,7 +4,7 @@ export const TimerForm = {
 	template: require('./tpl.html'),
 	bindings: {
 		isEditing: '<',
-		dismiss: '='
+		dismiss: '<'
 	},
 	controller(timerService) {
 		this.isLoading = false;

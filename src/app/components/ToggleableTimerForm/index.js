@@ -1,5 +1,8 @@
 export const ToggleableTimerForm = {
 	template: require('./tpl.html'),
+	bindings: {
+		refresh: '<'
+	},
 	controller() {
 		this.$onInit = () => {
 			this.showForm = false;
@@ -7,6 +10,7 @@ export const ToggleableTimerForm = {
 
 		this.dismiss = () => {
 			this.showForm = false;
+			this.refresh();
 		};
 	}
 };

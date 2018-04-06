@@ -10,6 +10,6 @@
             ng-repeat="timer in $ctrl.timers"
             timer-object="timer">
         </timer>
-        <toggleable-timer-form></toggleable-timer-form>
+        <toggleable-timer-form refresh="$ctrl.loadTimers"></toggleable-timer-form>
 	</div>
 </div>

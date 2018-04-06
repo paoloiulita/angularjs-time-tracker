@@ -3,11 +3,15 @@ export const TimerDashboard = {
 	controller(timerService) {
 		this.isLoading = true;
 
-		this.$onInit = () => {
+		this.loadTimers = () => {
 			timerService.getTimers().then(response => {
 				this.isLoading = false;
 				this.timers = response;
 			});
+		};
+
+		this.$onInit = () => {
+			this.loadTimers();
 		};
 	}
 };
