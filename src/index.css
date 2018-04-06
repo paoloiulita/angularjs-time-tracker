@@ -3,9 +3,13 @@ body {
 }
 
 #main {
-  margin-top: 6em;
+  margin-top: 3em;
 }
 
 #content {
   margin-top: 3em;
+}
+
+.ui.centered.card {
+  margin-top: 20px !important;
 }
