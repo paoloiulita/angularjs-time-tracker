@@ -5,12 +5,13 @@
 				<div class="ui text loader">Loading</div>
 			</div>
 		</div>
-		<timer
-            ng-if="!$ctrl.isLoading"
-            ng-repeat="timer in $ctrl.timers"
-            refresh="$ctrl.loadTimers"
-            timer-object="timer">
-        </timer>
-        <toggleable-timer-form refresh="$ctrl.loadTimers"></toggleable-timer-form>
+		<div id="timers" ng-if="!$ctrl.isLoading">
+			<timer
+				ng-repeat="timer in $ctrl.timers"
+				refresh="$ctrl.loadTimers"
+				timer-object="timer">
+			</timer>
+			<toggleable-timer-form refresh="$ctrl.loadTimers"></toggleable-timer-form>
+		</div>
 	</div>
 </div>
