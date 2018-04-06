@@ -6,11 +6,16 @@ export const Timer = {
 	controller($interval) {
 		let interval = null;
 		const updateTime = () => {
-			this.timerObject.elapsed += 2000;
+			this.timerObject.trueElapsed += 1000;
 		};
-		this.$onChanges = () => {
+		this.$onInit = () => {
+			let e = this.timerObject.elapsed;
+			if (this.timerObject.runningSince) {
+				e += Date.now() - this.timerObject.runningSince;
+			}
+			this.timerObject.trueElapsed = e;
 			if (!interval) {
-				interval = $interval(updateTime, 2000);
+				interval = $interval(updateTime, 1000);
 			}
 		};
 	}

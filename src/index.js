@@ -10,7 +10,7 @@ import './semantic-dist/semantic.css';
 
 import {TimerService} from './app/services/TimerService';
 
-import {RenderElapsedString} from './app/filters/RenderElapsedString';
+import {MsToHuman} from './app/filters/MsToHuman';
 
 import {TimerDashboard} from './app/components/TimerDashboard';
 import {TimerActionButton} from './app/components/TimerActionButton';
@@ -36,7 +36,7 @@ angular
 		$httpProvider.interceptors.push('globalInterceptor');
 	}])
 	.service('timerService', ['$http', TimerService])
-	.filter('renderElapsedString', RenderElapsedString)
+	.filter('msToHuman', MsToHuman)
 	.component('timerDashboard', TimerDashboard)
 	.component('timerActionButton', TimerActionButton)
 	.component('timer', Timer)
