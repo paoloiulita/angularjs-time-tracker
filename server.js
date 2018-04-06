@@ -19,6 +19,8 @@ app.use((req, res, next) => {
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Expires', '0');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, GET, DELETE');
   next();
 });
 
