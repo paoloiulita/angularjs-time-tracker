@@ -1,19 +1,37 @@
 <div class="ui centered card">
 	<div class="content">
-		<div class="ui form">
+		<div class="ui segment" ng-if="$ctrl.isLoading" style="height: 85px;">
+			<div class="ui active dimmer">
+				<div class="ui text loader">Loading</div>
+			</div>
+		</div>
+		<div class="ui form" ng-if="!$ctrl.isLoading">
+			<form name="timerForm" novalidate ng-submit="$ctrl.submitForm()">
 			<div class="field">
 				<label>Title</label>
-				<input type="text" value="title" />
+				<input
+					type="text"
+					value="title"
+					ng-minlength="3"
+					ng-maxlength="10"
+					required
+					ng-model="$ctrl.title" />
 			</div>
 			<div class="field">
 				<label>Project</label>
-				<input type="text" value="project" />
+				<input
+					type="text"
+					value="project"
+					ng-minlength="3"
+					ng-maxlength="10"
+					required
+					ng-model="$ctrl.project" />
 			</div>
 			<div class="ui two bottom attached buttons">
-				<button class="ui basic blue button">
-					submitText
+				<button class="ui basic blue button" ng-disabled="timerForm.$invalid">
+					{{$ctrl.isEditing ? 'Update' : 'Save'}}
 				</button>
-				<button class="ui basic red button">
+				<button class="ui basic red button" ng-click="$ctrl.dismiss()">
 					Cancel
 				</button>
 			</div>
