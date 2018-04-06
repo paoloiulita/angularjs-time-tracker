@@ -15,7 +15,8 @@ export const TimerForm = {
 			return timerService.createTimer({
 				title: this.timerData.title,
 				project: this.timerData.project,
-				id: v4()
+				id: v4(),
+				elasped: 0
 			});
 		};
 
