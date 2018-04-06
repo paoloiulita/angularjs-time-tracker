@@ -94,11 +94,11 @@ app.put('/api/timers', (req, res) => {
   });
 });
 
-app.delete('/api/timers', (req, res) => {
+app.delete('/api/timers/', (req, res) => {
   fs.readFile(DATA_FILE, (err, data) => {
     let timers = JSON.parse(data);
     timers = timers.reduce((memo, timer) => {
-      if (timer.id === req.body.id) {
+      if (timer.id === req.query.id) {
         return memo;
       } else {
         return memo.concat(timer);
