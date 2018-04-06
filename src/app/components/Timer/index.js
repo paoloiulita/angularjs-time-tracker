@@ -1,7 +1,8 @@
 export const Timer = {
 	template: require('./tpl.html'),
 	bindings: {
-		timerObject: '<'
+		timerObject: '<',
+		refresh: '<'
 	},
 	controller($interval, timerService) {
 		const updateTime = () => {
@@ -19,6 +20,10 @@ export const Timer = {
 
 		this.hideForm = () => {
 			this.showForm = false;
+		};
+
+		this.update = () => {
+			this.refresh();
 		};
 
 		this.$onInit = () => {

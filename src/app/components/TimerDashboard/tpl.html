@@ -8,6 +8,7 @@
 		<timer
             ng-if="!$ctrl.isLoading"
             ng-repeat="timer in $ctrl.timers"
+            refresh="$ctrl.loadTimers"
             timer-object="timer">
         </timer>
         <toggleable-timer-form refresh="$ctrl.loadTimers"></toggleable-timer-form>

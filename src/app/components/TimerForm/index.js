@@ -5,21 +5,26 @@ export const TimerForm = {
 	bindings: {
 		isEditing: '<',
 		complete: '<',
-		cancel: '<'
+		cancel: '<',
+		timerData: '<'
 	},
 	controller(timerService) {
 		this.isLoading = false;
 
 		const doCreate = () => {
 			return timerService.createTimer({
-				title: this.title,
-				project: this.project,
+				title: this.timerData.title,
+				project: this.timerData.project,
 				id: v4()
 			});
 		};
 
 		const doEdit = () => {
-
+			return timerService.updateTimer({
+				title: this.timerData.title,
+				project: this.timerData.project,
+				id: this.timerData.id
+			});
 		};
 
 		this.handleCancelButton = e => {

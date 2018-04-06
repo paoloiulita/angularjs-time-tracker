@@ -11,21 +11,17 @@
 				<label>Title</label>
 				<input
 					type="text"
-					value="title"
 					ng-minlength="3"
-					ng-maxlength="10"
 					required
-					ng-model="$ctrl.title" />
+					ng-model="$ctrl.timerData.title" />
 			</div>
 			<div class="field">
 				<label>Project</label>
 				<input
 					type="text"
-					value="project"
 					ng-minlength="3"
-					ng-maxlength="10"
 					required
-					ng-model="$ctrl.project" />
+					ng-model="$ctrl.timerData.project" />
 			</div>
 			<div class="ui two bottom attached buttons">
 				<button class="ui basic blue button" ng-disabled="timerForm.$invalid">

@@ -26,6 +26,7 @@
 <timer-form
 	ng-if="$ctrl.showForm"
 	cancel="$ctrl.hideForm"
-	complete=""
+	complete="$ctrl.update"
+	timer-data="$ctrl.timerObject"
 	is-editing="true">
 </timer-form>
