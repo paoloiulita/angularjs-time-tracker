@@ -31,7 +31,7 @@
 				<button class="ui basic blue button" ng-disabled="timerForm.$invalid">
 					{{$ctrl.isEditing ? 'Update' : 'Save'}}
 				</button>
-				<button class="ui basic red button" ng-click="$ctrl.cancel()">
+				<button class="ui basic red button" ng-click="$ctrl.handleCancelButton($event)">
 					Cancel
 				</button>
 			</div>

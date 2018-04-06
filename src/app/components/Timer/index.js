@@ -4,8 +4,6 @@ export const Timer = {
 		timerObject: '<'
 	},
 	controller($interval, timerService) {
-		let tick = null;
-
 		const updateTime = () => {
 			this.timerObject.elapsed += 1000;
 			this.elapsedTime += 1000;
@@ -14,6 +12,13 @@ export const Timer = {
 		const clear = () => {
 			$interval.cancel(tick);
 			tick = null;
+		};
+
+		let tick = null;
+		this.showForm = false;
+
+		this.hideForm = () => {
+			this.showForm = false;
 		};
 
 		this.$onInit = () => {

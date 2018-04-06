@@ -22,6 +22,11 @@ export const TimerForm = {
 
 		};
 
+		this.handleCancelButton = e => {
+			e.stopPropagation();
+			this.cancel();
+		};
+
 		this.submitForm = () => {
 			this.isLoading = true;
 			const promise = this.isEditing ? doEdit : doCreate;
