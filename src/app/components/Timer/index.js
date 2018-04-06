@@ -3,20 +3,41 @@ export const Timer = {
 	bindings: {
 		timerObject: '<'
 	},
-	controller($interval) {
-		let interval = null;
+	controller($interval, timerService) {
+		let tick = null;
+
 		const updateTime = () => {
-			this.timerObject.trueElapsed += 1000;
+			this.timerObject.elapsed += 1000;
+			this.elapsedTime += 1000;
 		};
+
+		const clear = () => {
+			$interval.cancel(tick);
+			tick = null;
+		};
+
 		this.$onInit = () => {
+			this.isRunning = !!this.timerObject.runningSince;
+
 			let e = this.timerObject.elapsed;
-			if (this.timerObject.runningSince) {
+			if (this.isRunning) {
 				e += Date.now() - this.timerObject.runningSince;
 			}
-			this.timerObject.trueElapsed = e;
-			if (!interval) {
-				interval = $interval(updateTime, 1000);
+			this.elapsedTime = e;
+		};
+
+		this.$doCheck = () => {
+			if (this.isRunning) {
+				if (tick == null) {
+					tick = $interval(updateTime, 1000);
+				}
+			} else {
+				clear();
 			}
+		};
+		
+		this.$onDestroy = () => {
+			clear();
 		};
 	}
 };
