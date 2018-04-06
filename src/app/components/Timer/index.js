@@ -17,7 +17,7 @@ export const Timer = {
 		};
 
 		this.$onInit = () => {
-			this.isRunning = !!this.timerObject.runningSince;
+			this.isRunning = Boolean(this.timerObject.runningSince);
 
 			let e = this.timerObject.elapsed;
 			if (this.isRunning) {
@@ -28,14 +28,14 @@ export const Timer = {
 
 		this.$doCheck = () => {
 			if (this.isRunning) {
-				if (tick == null) {
+				if (tick === null) {
 					tick = $interval(updateTime, 1000);
 				}
 			} else {
 				clear();
 			}
 		};
-		
+
 		this.$onDestroy = () => {
 			clear();
 		};
@@ -52,10 +52,8 @@ export const Timer = {
 					id: this.timerObject.id,
 					start: Date.now()
 				})
-					.then(response => {
-						this.isRunning = true;
-					});
+					.then(this.isRunning = true);
 			}
-		}
+		};
 	}
 };

@@ -6,7 +6,7 @@ export const MsToHuman = () => {
 		}
 		return padded;
 	};
-	return (input) => {
+	return input => {
 		const seconds = Math.floor((input / 1000) % 60);
 		const minutes = Math.floor((input / 1000 / 60) % 60);
 		const hours = Math.floor(input / 1000 / 60 / 60);

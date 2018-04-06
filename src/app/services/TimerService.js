@@ -9,12 +9,7 @@ export const TimerService = $http => {
 	};
 
 	const createTimer = data => {
-		return $http.post('/api/timers', {
-			body: angular.toJson(data),
-			headers: {
-				
-			}
-		});
+		return $http.post('/api/timers', data);
 	};
 
 	const updateTimer = data => {
