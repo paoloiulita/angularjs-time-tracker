@@ -1,3 +1,3 @@
-<div class="ui bottom attached red basic button">
-	Stop
+<div class="ui bottom attached basic button" ng-class="{red: $ctrl.isRunning, green: !$ctrl.isRunning}">
+	{{$ctrl.isRunning ? 'Stop' : 'Play'}}
 </div>
