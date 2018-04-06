@@ -26,6 +26,13 @@ export const Timer = {
 			this.refresh();
 		};
 
+		this.delete = () => {
+			timerService.deleteTimer({
+				id: this.timerObject.id
+			})
+				.then(this.refresh);
+		};
+
 		this.$onInit = () => {
 			this.isRunning = Boolean(this.timerObject.runningSince);
 

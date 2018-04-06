@@ -17,7 +17,7 @@ export const TimerService = $http => {
 	};
 
 	const deleteTimer = data => {
-		return $http.delete('/api/timers', data);
+		return $http.delete(`/api/timers?id=${data.id}`);
 	};
 
 	const startTimer = data => {
