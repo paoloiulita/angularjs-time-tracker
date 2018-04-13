@@ -1,5 +1,3 @@
-# React select
+# AngularJS Time Tracker
 
-## This is a repository aimed to study ReactJS
-
-### Sure, there is little or nothing of interest here  :)
+## This is a repository aimed to support my AngularJS Workshop
