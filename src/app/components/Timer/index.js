@@ -30,7 +30,7 @@ export const Timer = {
 			timerService.deleteTimer({
 				id: this.timerObject.id
 			})
-				.then(this.refresh);
+			.then(this.refresh);
 		};
 
 		this.$onInit = () => {
@@ -63,13 +63,13 @@ export const Timer = {
 					id: this.timerObject.id,
 					stop: Date.now()
 				})
-					.then(this.isRunning = false);
+				.then(this.isRunning = false);
 			} else {
 				timerService.startTimer({
 					id: this.timerObject.id,
 					start: Date.now()
 				})
-					.then(this.isRunning = true);
+				.then(this.isRunning = true);
 			}
 		};
 	}
