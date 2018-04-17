@@ -12,6 +12,9 @@ import {TimerService} from './app/services/TimerService';
 
 import {MsToHuman} from './app/filters/MsToHuman';
 
+import {globalInterceptor} from './globalInterceptor';
+import {httpProvider} from './httpProvider';
+
 import {TimerDashboard} from './app/components/TimerDashboard';
 import {TimerActionButton} from './app/components/TimerActionButton';
 import {Timer} from './app/components/Timer';
@@ -24,18 +27,9 @@ angular
 	.module(app, ['ui.router'])
 	.config(routesConfig)
 	.value('REMOTE_HOST', 'http://localhost:3033')
-	.factory('globalInterceptor', ['REMOTE_HOST', function(REMOTE_HOST) {
-		return {
-			request: function(config) {
-				config.url = REMOTE_HOST + config.url;
-				return config;
-			},
-		}
-	}])
-	.config(['$httpProvider', function($httpProvider) { 
-		$httpProvider.interceptors.push('globalInterceptor');
-	}])
+	.config(['$httpProvider', httpProvider])
 	.service('timerService', ['$http', TimerService])
+	.factory('globalInterceptor', ['REMOTE_HOST', globalInterceptor])
 	.filter('msToHuman', MsToHuman)
 	.component('timerDashboard', TimerDashboard)
 	.component('timerActionButton', TimerActionButton)
