@@ -23,6 +23,13 @@
 					required
 					ng-model="$ctrl.timerData.project" />
 			</div>
+			<div class="ui negative message" ng-if="$ctrl.showError">
+				<i class="close icon" ng-click="$ctrl.showError = false"></i>
+				<div class="header">
+					Operation failed
+				</div>
+				<p>There was an error completing your request: please retry</p>
+			</div>
 			<div class="ui two bottom attached buttons">
 				<button class="ui basic blue button" ng-disabled="timerForm.$invalid">
 					{{$ctrl.isEditing ? 'Update' : 'Save'}}

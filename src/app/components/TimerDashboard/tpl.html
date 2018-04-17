@@ -1,9 +1,15 @@
 <div class="ui three column centered grid">
 	<div class="column">
-		<div class="ui segment" ng-if="$ctrl.isLoading"  style="height: 85px;">
+		<div class="ui segment" ng-if="$ctrl.isLoading" style="height: 85px;">
 			<div class="ui active dimmer">
 				<div class="ui text loader">Loading</div>
 			</div>
+		</div>
+		<div class="ui negative message" ng-if="$ctrl.showError">
+			<div class="header">
+				Operation failed
+			</div>
+			<p>We are sorry we can not load timers</p>
 		</div>
 		<div id="timers" ng-if="!$ctrl.isLoading">
 			<timer
@@ -11,7 +17,10 @@
 				refresh="$ctrl.loadTimers"
 				timer-object="timer">
 			</timer>
-			<toggleable-timer-form refresh="$ctrl.loadTimers"></toggleable-timer-form>
+			<toggleable-timer-form refresh="$ctrl.loadTimers" ng-if="!$ctrl.showError"></toggleable-timer-form>
+			<button class="ui basic button icon" ng-if="$ctrl.showError" ng-click="$ctrl.loadTimers()">
+				Retry
+			</button>
 		</div>
 	</div>
 </div>

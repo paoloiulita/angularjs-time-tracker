@@ -10,6 +10,7 @@ export const TimerForm = {
 	},
 	controller(timerService) {
 		this.isLoading = false;
+		this.showError = false;
 
 		const doCreate = () => {
 			return timerService.createTimer({
@@ -35,10 +36,16 @@ export const TimerForm = {
 
 		this.submitForm = () => {
 			this.isLoading = true;
+			this.showError = false;
 			const promise = this.isEditing ? doEdit : doCreate;
 			promise().then(() => {
-				this.isLoading = false;
 				this.complete();
+			})
+			.catch(() => {
+				this.showError = true;
+			})
+			.finally(() => {
+				this.isLoading = false;
 			});
 		};
 	}
